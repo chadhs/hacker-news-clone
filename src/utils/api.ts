@@ -17,7 +17,6 @@ export const fetchItemById = async (id) => {
 };
 
 export const fetchStories = async (storyIds) => {
-  console.warn(storyIds);
   return Promise.all(
     await storyIds.map((id) => {
       return fetchItemById(id);

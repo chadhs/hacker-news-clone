@@ -23,9 +23,16 @@ export const TopStories = () => {
         return (
           <React.Fragment key={story.id}>
             <div className="story">
-              <a href={story.url}>{story.title}</a>
-              {story.by} {story.time}
+              <div className="story-title">
+                <a href={story.url}>{story.title}</a>
+              </div>
+              <div className="story-metadata">
+                by <a href="/">{story.by}</a> on{' '}
+                {new Date(story.time * 1000).toLocaleString('en-US')} with{' '}
+                <a href="/">{story?.kids?.length || 0}</a> comments
+              </div>
             </div>
+            <br />
           </React.Fragment>
         );
       })}
