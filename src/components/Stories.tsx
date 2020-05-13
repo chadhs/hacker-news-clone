@@ -14,7 +14,7 @@ export const Stories = ({ type }) => {
     if (stories.length < 1 || stories === undefined) {
       getAndSetStories();
     }
-  }, [stories]);
+  }, [stories, type]);
 
   return (
     <div>
