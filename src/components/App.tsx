@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <h1>Hacker News Clone</h1>
       </header>
-      <Stories type="top" />
+      <Stories storyType="top" storyCount={20} />
     </div>
   );
 }

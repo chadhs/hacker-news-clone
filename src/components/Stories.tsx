@@ -1,12 +1,15 @@
 import React from 'react';
 import { fetchStoryIds, fetchStories } from '../utils/api';
 
-export const Stories = ({ type }) => {
+export const Stories = ({ storyType, storyCount }) => {
   const [stories, setStories] = React.useState([]);
 
   React.useEffect(() => {
     const getAndSetStories = async () => {
-      const storyIds = await fetchStoryIds({ type: type, count: 20 });
+      const storyIds = await fetchStoryIds({
+        type: storyType,
+        count: storyCount,
+      });
       const stories = await fetchStories(storyIds);
       setStories(stories);
     };
@@ -14,11 +17,11 @@ export const Stories = ({ type }) => {
     if (stories.length < 1 || stories === undefined) {
       getAndSetStories();
     }
-  }, [stories, type]);
+  }, [stories, storyType, storyCount]);
 
   return (
     <div>
-      <h2>{type === 'top' ? 'Top' : 'New'} Stories</h2>
+      <h2>{storyType === 'top' ? 'Top' : 'New'} Stories</h2>
       {stories.map((story) => {
         return (
           <React.Fragment key={story.id}>
