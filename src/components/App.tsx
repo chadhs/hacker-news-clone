@@ -1,5 +1,5 @@
 import React from 'react';
-import { TopStories } from './TopStories';
+import { Stories } from './Stories';
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <h1>Hacker News Clone</h1>
       </header>
-      <TopStories />
+      <Stories type="top" />
     </div>
   );
 }

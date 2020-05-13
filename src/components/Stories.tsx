@@ -1,12 +1,12 @@
 import React from 'react';
 import { fetchStoryIds, fetchStories } from '../utils/api';
 
-export const TopStories = () => {
+export const Stories = ({ type }) => {
   const [stories, setStories] = React.useState([]);
 
   React.useEffect(() => {
     const getAndSetStories = async () => {
-      const storyIds = await fetchStoryIds({ type: 'top', count: 20 });
+      const storyIds = await fetchStoryIds({ type: type, count: 20 });
       const stories = await fetchStories(storyIds);
       setStories(stories);
     };
@@ -18,7 +18,7 @@ export const TopStories = () => {
 
   return (
     <div>
-      <h2>Top Stories</h2>
+      <h2>{type === 'top' ? 'Top' : 'New'} Stories</h2>
       {stories.map((story) => {
         return (
           <React.Fragment key={story.id}>
