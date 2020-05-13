@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  margin-left: 3rem;
+}
+
+.story-title {
+  font-size: 1.0rem;
+  font-weight: bold;
+  color: rgb(187, 46, 31);
+}
+.story-title a, .story-title a link, .story-title a hover, .story-title a visted {
+  color: rgb(187, 46, 31);
+  text-decoration: none;
+}
+.story-metadata {
+  color: gray;
+}
+.story-metadata a, .story-metadata a link, .story-metadata a hover, .story-metadata a visted {
+  color: black;
+}
