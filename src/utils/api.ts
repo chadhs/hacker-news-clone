@@ -15,3 +15,11 @@ export const fetchItemById = async (id) => {
     return res.json();
   });
 };
+
+export const fetchStories = async (storyIds) => {
+  return Promise.all(
+    await storyIds.map((id) => {
+      return fetchItemById(id);
+    }),
+  );
+};
