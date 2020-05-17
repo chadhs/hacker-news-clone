@@ -1,8 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { ThemeContext } from '../contexts/theme';
 
-export const Nav = () => {
-  const theme = 'light';
+export const Nav = ({ toggleTheme }) => {
+  const theme = React.useContext(ThemeContext);
   return (
     <div className="nav-bar">
       <NavLink to="/" exact className="nav-link">
@@ -11,7 +12,9 @@ export const Nav = () => {
       <NavLink to="/new" exact className="nav-link">
         New{' '}
       </NavLink>
-      <div className="nav-theme-toggle">{theme === 'light' ? '🔦' : '💡'}</div>
+      <button className="btn-clear nav-theme-toggle" onClick={toggleTheme}>
+        {theme === 'light' ? '🔦' : '💡'}
+      </button>
     </div>
   );
 };

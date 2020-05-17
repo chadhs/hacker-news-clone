@@ -52,3 +52,7 @@ a.nav-link.active {
   font-size: 1.5rem;
   float: right;
 }
+.btn-clear {
+  border: none;
+  background: transparent;
+}
