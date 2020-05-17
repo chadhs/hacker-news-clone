@@ -1,3 +1,11 @@
+# Hacker News Clone
+
+This project is where I'm working through the "Hardest" option for the [Tyler McGinnis React Course Curriculum](https://github.com/tylermcginnis/react-course-curriculum).
+
+I highly recommend the React and React Hooks courses at <https://tylermcginnis.com>. 
+
+## Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
