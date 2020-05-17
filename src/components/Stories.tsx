@@ -14,14 +14,11 @@ export const Stories = ({ storyType, storyCount }) => {
       setStories(stories);
     };
 
-    if (stories.length < 1 || stories === undefined) {
-      getAndSetStories();
-    }
-  }, [stories, storyType, storyCount]);
+    getAndSetStories();
+  }, [storyType, storyCount]);
 
   return (
     <div>
-      <h2>{storyType === 'top' ? 'Top' : 'New'} Stories</h2>
       {stories.map((story) => {
         return (
           <React.Fragment key={story.id}>

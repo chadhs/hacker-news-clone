@@ -14,6 +14,7 @@ code {
 
 .App {
   margin-left: 3rem;
+  margin-right: 3rem;
 }
 
 .story-title {
@@ -30,4 +31,24 @@ code {
 }
 .story-metadata a, .story-metadata a link, .story-metadata a hover, .story-metadata a visted {
   color: black;
+}
+
+.nav-bar {
+  margin-bottom: 1.0rem;
+}
+.nav-link {
+  margin-right: 0.3rem;
+}
+a.nav-link {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+a.nav-link.active {
+  color: rgb(187, 46, 31);
+}
+.nav-theme-toggle {
+  font-size: 1.5rem;
+  float: right;
 }
