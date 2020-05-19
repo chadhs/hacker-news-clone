@@ -1,8 +1,10 @@
 import React from 'react';
 import { fetchStoryIds, fetchStories } from '../utils/api';
+import { ThemeContext } from '../contexts/theme';
 
 export const Stories = ({ storyType, storyCount }) => {
   const [stories, setStories] = React.useState([]);
+  const theme = React.useContext(ThemeContext);
 
   React.useEffect(() => {
     const getAndSetStories = async () => {
@@ -23,13 +25,19 @@ export const Stories = ({ storyType, storyCount }) => {
         return (
           <React.Fragment key={story.id}>
             <div className="story">
-              <div className="story-title">
+              <div className={`story-title story-link-${theme}`}>
                 <a href={story.url}>{story.title}</a>
               </div>
               <div className="story-metadata">
-                by <a href="/">{story.by}</a> on{' '}
-                {new Date(story.time * 1000).toLocaleString('en-US')} with{' '}
-                <a href="/">{story?.kids?.length || 0}</a> comments
+                by{' '}
+                <a href="/" className={`${theme}`}>
+                  {story.by}
+                </a>{' '}
+                on {new Date(story.time * 1000).toLocaleString('en-US')} with{' '}
+                <a href="/" className={`${theme}`}>
+                  {story?.kids?.length || 0}
+                </a>{' '}
+                comments
               </div>
             </div>
             <br />
