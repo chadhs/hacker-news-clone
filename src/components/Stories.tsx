@@ -1,5 +1,6 @@
 import React from 'react';
 import { fetchStoryIds, fetchStories } from '../utils/api';
+import { formatDateTimeMetadata } from '../utils/time';
 import { ThemeContext } from '../contexts/theme';
 
 export const Stories = ({ storyType, storyCount }) => {
@@ -33,7 +34,7 @@ export const Stories = ({ storyType, storyCount }) => {
                 <a href="/" className={`${theme}`}>
                   {story.by}
                 </a>{' '}
-                on {new Date(story.time * 1000).toLocaleString('en-US')} with{' '}
+                on {formatDateTimeMetadata(story.time)} with{' '}
                 <a href={`/post?id=${story.id}`} className={`${theme}`}>
                   {story?.kids?.length || 0}
                 </a>{' '}
