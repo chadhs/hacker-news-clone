@@ -82,3 +82,19 @@ a.nav-link.active {
   border: none;
   background: transparent;
 }
+
+.Comment-light {
+  background: #ededed;
+  margin-top: 0.5rem;
+  margin-bottom: 1.0rem;
+  padding: 1.0rem;
+  border-radius: 0.4rem;
+}
+
+.Comment-dark {
+  background: #2A2D2F;
+  margin-top: 0.5rem;
+  margin-bottom: 1.0rem;
+  padding: 1.0rem;
+  border-radius: 0.4rem;
+}
