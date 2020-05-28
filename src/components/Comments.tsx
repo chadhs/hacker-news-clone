@@ -10,10 +10,11 @@ export const Comments = ({ location }) => {
 
   const [story, setStory] = React.useState(null);
   const [comments, setComments] = React.useState([]);
+
   const theme = React.useContext(ThemeContext);
 
   React.useEffect(() => {
-    const getAndSetComments = async () => {
+    const getAndSetCommentData = async () => {
       const post = await fetchItemById(postId);
       setStory(post);
       if (post?.kids?.length > 0) {
@@ -21,7 +22,7 @@ export const Comments = ({ location }) => {
       }
     };
 
-    getAndSetComments();
+    getAndSetCommentData();
   }, [location, postId]);
 
   return (

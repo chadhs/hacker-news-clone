@@ -12,7 +12,7 @@ export const StoryLink = ({ story }) => {
         </div>
         <div className="story-metadata">
           by{' '}
-          <a href="/" className={`${theme}`}>
+          <a href={`/user?id=${story?.by}`} className={`${theme}`}>
             {story?.by}
           </a>{' '}
           on {formatDateTimeMetadata(story?.time)} with{' '}

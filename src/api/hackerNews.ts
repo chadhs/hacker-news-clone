@@ -23,3 +23,9 @@ export const fetchItems = async (itemIds) => {
     }),
   );
 };
+
+export const fetchUserById = async (id) => {
+  return await fetch(`${hnBaseUrl}/user/${id}.json`).then((res) => {
+    return res.json();
+  });
+};
