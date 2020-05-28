@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatDateTimeMetadata } from '../utils/time';
+import { formatDateTimeMetadata } from '../common/time';
 import { ThemeContext } from '../contexts/theme';
 
 export const StoryLink = ({ story }) => {

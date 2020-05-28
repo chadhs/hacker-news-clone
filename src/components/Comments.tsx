@@ -1,7 +1,7 @@
 import React from 'react';
 import queryString from 'query-string';
-import { fetchItemById, fetchItems } from '../utils/api';
-import { formatDateTimeMetadata } from '../utils/time';
+import { fetchItemById, fetchItems } from '../api/hackerNews';
+import { formatDateTimeMetadata } from '../common/time';
 import { StoryLink } from './StoryLink';
 import { ThemeContext } from '../contexts/theme';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchStoryIds, fetchItems } from '../utils/api';
+import { fetchStoryIds, fetchItems } from '../api/hackerNews';
 import { StoryLink } from './StoryLink';
 
 export const Stories = ({ storyType, storyCount }) => {

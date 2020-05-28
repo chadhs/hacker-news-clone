@@ -1,4 +1,4 @@
-import { fetchStoryIds, fetchItemById, fetchItems } from './api';
+import { fetchStoryIds, fetchItemById, fetchItems } from './hackerNews';
 
 describe('All items fetched from the API successfully.', () => {
   it('returns newest 20 story ids', async () => {
