@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Stories } from './Stories';
+import { Comments } from './Comments';
 import { ThemeContext } from '../contexts/theme';
 import { Nav } from './Nav';
 
@@ -34,6 +35,7 @@ export const App = () => {
                 path="/new"
                 render={() => <Stories storyType="new" storyCount={20} />}
               />
+              <Route path="/post" component={Comments} />
               <Route render={() => <h1>404</h1>} />
             </Switch>
           </div>

@@ -34,7 +34,7 @@ export const Stories = ({ storyType, storyCount }) => {
                   {story.by}
                 </a>{' '}
                 on {new Date(story.time * 1000).toLocaleString('en-US')} with{' '}
-                <a href="/" className={`${theme}`}>
+                <a href={`/post?id=${story.id}`} className={`${theme}`}>
                   {story?.kids?.length || 0}
                 </a>{' '}
                 comments
