@@ -1,20 +1,23 @@
 import React from 'react';
-import { ThemeContext } from '../contexts/theme';
 import queryString from 'query-string';
-import { fetchItemById, fetchStories } from '../utils/api';
+import { fetchItemById, fetchItems } from '../utils/api';
 import { formatDateTimeMetadata } from '../utils/time';
+import { StoryLink } from './StoryLink';
+import { ThemeContext } from '../contexts/theme';
 
 export const Comments = ({ location }) => {
   const { id: postId } = queryString.parse(location.search);
 
+  const [story, setStory] = React.useState(null);
   const [comments, setComments] = React.useState([]);
   const theme = React.useContext(ThemeContext);
 
   React.useEffect(() => {
     const getAndSetComments = async () => {
-      const { kids: commentIds } = await fetchItemById(postId);
-      if (commentIds?.length > 0) {
-        setComments(await fetchStories(commentIds));
+      const post = await fetchItemById(postId);
+      setStory(post);
+      if (post?.kids?.length > 0) {
+        setComments(await fetchItems(post.kids));
       }
     };
 
@@ -23,10 +26,7 @@ export const Comments = ({ location }) => {
 
   return (
     <div>
-      <div className={`story-title story-link-${theme}`}>
-        Story Title and Link {postId}
-      </div>
-      <div className="story-metadata">Story Metadata</div>
+      <StoryLink story={story} />
       {comments.map((comment) => (
         <div key={comment.id} className={`Comment-${theme}`}>
           <div className="story-metadata">
