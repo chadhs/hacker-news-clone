@@ -36,7 +36,10 @@ export const Comments = ({ location }) => {
             </a>{' '}
             on {formatDateTimeMetadata(comment.time)}
           </div>
-          <div dangerouslySetInnerHTML={{ __html: comment.text }} />
+          <div
+            className="comment-text"
+            dangerouslySetInnerHTML={{ __html: comment.text }}
+          />
         </div>
       ))}
     </div>

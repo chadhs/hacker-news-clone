@@ -15,9 +15,6 @@ export const App = () => {
       <ThemeContext.Provider value={theme}>
         <div className={theme}>
           <div className="App">
-            <header className="App-header">
-              <h1>Hacker News Clone</h1>
-            </header>
             <Nav toggleTheme={toggleTheme} />
             <Switch>
               <Route

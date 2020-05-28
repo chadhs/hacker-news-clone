@@ -19,12 +19,9 @@ code {
 }
 
 .App {
+  padding-top: 2rem;
   margin-left: 3rem;
   margin-right: 3rem;
-}
-
-.App-header {
-  display: flex;
 }
 
 .dark {
@@ -97,4 +94,8 @@ a.nav-link.active {
   margin-bottom: 1.0rem;
   padding: 1.0rem;
   border-radius: 0.4rem;
+}
+
+.comment-text {
+  margin-top: 1rem;
 }
