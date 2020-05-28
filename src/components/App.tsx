@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Stories } from './Stories';
+import { Comments } from './Comments';
 import { ThemeContext } from '../contexts/theme';
 import { Nav } from './Nav';
 
@@ -14,9 +15,6 @@ export const App = () => {
       <ThemeContext.Provider value={theme}>
         <div className={theme}>
           <div className="App">
-            <header className="App-header">
-              <h1>Hacker News Clone</h1>
-            </header>
             <Nav toggleTheme={toggleTheme} />
             <Switch>
               <Route
@@ -34,6 +32,7 @@ export const App = () => {
                 path="/new"
                 render={() => <Stories storyType="new" storyCount={20} />}
               />
+              <Route path="/post" component={Comments} />
               <Route render={() => <h1>404</h1>} />
             </Switch>
           </div>

@@ -1,4 +1,4 @@
-import { fetchStoryIds, fetchItemById, fetchStories } from './api';
+import { fetchStoryIds, fetchItemById, fetchItems } from './api';
 
 describe('All items fetched from the API successfully.', () => {
   it('returns newest 20 story ids', async () => {
@@ -16,7 +16,7 @@ describe('All items fetched from the API successfully.', () => {
   });
   it('returns an array of story details', async () => {
     const topStoryIds = await fetchStoryIds({ type: 'top', count: 3 });
-    const stories = await fetchStories(topStoryIds);
+    const stories = await fetchItems(topStoryIds);
     expect(stories.length).toBe(3);
     expect(stories[0]).toHaveProperty('id');
   });

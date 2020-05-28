@@ -19,12 +19,9 @@ code {
 }
 
 .App {
+  padding-top: 2rem;
   margin-left: 3rem;
   margin-right: 3rem;
-}
-
-.App-header {
-  display: flex;
 }
 
 .dark {
@@ -81,4 +78,24 @@ a.nav-link.active {
 .btn-clear {
   border: none;
   background: transparent;
+}
+
+.Comment-light {
+  background: #ededed;
+  margin-top: 0.5rem;
+  margin-bottom: 1.0rem;
+  padding: 1.0rem;
+  border-radius: 0.4rem;
+}
+
+.Comment-dark {
+  background: #2A2D2F;
+  margin-top: 0.5rem;
+  margin-bottom: 1.0rem;
+  padding: 1.0rem;
+  border-radius: 0.4rem;
+}
+
+.comment-text {
+  margin-top: 1rem;
 }

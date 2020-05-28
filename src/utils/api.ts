@@ -16,9 +16,9 @@ export const fetchItemById = async (id) => {
   });
 };
 
-export const fetchStories = async (storyIds) => {
+export const fetchItems = async (itemIds) => {
   return Promise.all(
-    await storyIds.map((id) => {
+    await itemIds.map((id) => {
       return fetchItemById(id);
     }),
   );
