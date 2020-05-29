@@ -1,5 +1,6 @@
 import React from 'react';
 import queryString from 'query-string';
+import { Link } from 'react-router-dom';
 import { fetchItemById, fetchItems } from '../api/hackerNews';
 import { formatDateTimeMetadata } from '../common/time';
 import { StoryLink } from './StoryLink';
@@ -32,9 +33,9 @@ export const Comments = ({ location }) => {
         <div key={comment.id} className={`Comment-${theme}`}>
           <div className="story-metadata">
             by{' '}
-            <a href="/" className={`${theme}`}>
+            <Link to="/" className={`${theme}`}>
               {comment.by}
-            </a>{' '}
+            </Link>{' '}
             on {formatDateTimeMetadata(comment.time)}
           </div>
           <div
