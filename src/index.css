@@ -53,9 +53,6 @@ a.dark{
 .story-metadata {
   color: gray;
 }
-.story-metadata a, .story-metadata a link, .story-metadata a hover, .story-metadata a visted {
-  /* color: black; */
-}
 
 .nav-bar {
   margin-bottom: 1.0rem;
