@@ -3,15 +3,12 @@ import queryString from 'query-string';
 import { fetchUserById, fetchItems } from '../api/hackerNews';
 import { formatDateTimeMetadata } from '../common/time';
 import { StoryLink } from './StoryLink';
-import { ThemeContext } from '../contexts/theme';
 
 export const User = ({ location }) => {
   const { id: userId } = queryString.parse(location.search);
 
   const [user, setUser] = React.useState(null);
   const [userItems, setUserItems] = React.useState([]);
-
-  const theme = React.useContext(ThemeContext);
 
   React.useEffect(() => {
     const getAndSetUserData = async () => {

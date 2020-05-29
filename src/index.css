@@ -99,3 +99,21 @@ a.nav-link.active {
 .comment-text {
   margin-top: 1rem;
 }
+
+.user-name {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.user-metadata {
+  font-weight: bold;
+  color: grey;
+  margin-bottom: 1.0rem;
+}
+
+.user-posts-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 1.0rem;
+}
