@@ -1,5 +1,6 @@
 import React from 'react';
-import { formatDateTimeMetadata } from '../utils/time';
+import { Link } from 'react-router-dom';
+import { formatDateTimeMetadata } from '../common/time';
 import { ThemeContext } from '../contexts/theme';
 
 export const StoryLink = ({ story }) => {
@@ -12,13 +13,13 @@ export const StoryLink = ({ story }) => {
         </div>
         <div className="story-metadata">
           by{' '}
-          <a href="/" className={`${theme}`}>
+          <Link to={`/user?id=${story?.by}`} className={`${theme}`}>
             {story?.by}
-          </a>{' '}
+          </Link>{' '}
           on {formatDateTimeMetadata(story?.time)} with{' '}
-          <a href={`/post?id=${story?.id}`} className={`${theme}`}>
+          <Link to={`/post?id=${story?.id}`} className={`${theme}`}>
             {story?.kids?.length || 0}
-          </a>{' '}
+          </Link>{' '}
           comments
         </div>
       </div>

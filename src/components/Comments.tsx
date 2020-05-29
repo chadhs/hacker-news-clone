@@ -1,7 +1,8 @@
 import React from 'react';
 import queryString from 'query-string';
-import { fetchItemById, fetchItems } from '../utils/api';
-import { formatDateTimeMetadata } from '../utils/time';
+import { Link } from 'react-router-dom';
+import { fetchItemById, fetchItems } from '../api/hackerNews';
+import { formatDateTimeMetadata } from '../common/time';
 import { StoryLink } from './StoryLink';
 import { ThemeContext } from '../contexts/theme';
 
@@ -10,10 +11,11 @@ export const Comments = ({ location }) => {
 
   const [story, setStory] = React.useState(null);
   const [comments, setComments] = React.useState([]);
+
   const theme = React.useContext(ThemeContext);
 
   React.useEffect(() => {
-    const getAndSetComments = async () => {
+    const getAndSetCommentData = async () => {
       const post = await fetchItemById(postId);
       setStory(post);
       if (post?.kids?.length > 0) {
@@ -21,7 +23,7 @@ export const Comments = ({ location }) => {
       }
     };
 
-    getAndSetComments();
+    getAndSetCommentData();
   }, [location, postId]);
 
   return (
@@ -31,9 +33,9 @@ export const Comments = ({ location }) => {
         <div key={comment.id} className={`Comment-${theme}`}>
           <div className="story-metadata">
             by{' '}
-            <a href="/" className={`${theme}`}>
+            <Link to="/" className={`${theme}`}>
               {comment.by}
-            </a>{' '}
+            </Link>{' '}
             on {formatDateTimeMetadata(comment.time)}
           </div>
           <div
